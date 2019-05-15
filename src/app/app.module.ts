@@ -3,22 +3,17 @@ import { NgModule } from '@angular/core';
 import { NbThemeModule } from '@nebular/theme';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
-import {AppRoutingModule} from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
-const MODULES = [
-  NbThemeModule.forRoot(),
-  PagesModule,
-  BrowserModule,
-  AppRoutingModule,
-];
-
-const COMPONENTS = [
-  AppComponent,
-];
 
 @NgModule({
-  declarations: [ ...COMPONENTS ],
-  imports: [ ...MODULES ],
+  declarations: [AppComponent],
+  imports: [
+    NbThemeModule.forRoot({ name: 'default' }),
+    PagesModule,
+    BrowserModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

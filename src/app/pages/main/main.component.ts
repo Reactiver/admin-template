@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NbSidebarService } from '@nebular/theme';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private sidebarService: NbSidebarService) {
   }
 
+  ngOnInit() {
+    console.log(this.sidebarService);
+  }
+
+  toggle() {
+    this.sidebarService.toggle(true);
+    return false;
+  }
 }
