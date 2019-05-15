@@ -36,8 +36,6 @@ import {
   NbCalendarKitModule,
 } from '@nebular/theme';
 
-import { NbEvaIconsModule } from '@nebular/eva-icons';
-
 // COMPONENTS
 import { MainComponent } from './main/main.component';
 
@@ -46,7 +44,6 @@ const COMPONENTS = [
 ];
 
 const MODULE = [
-  NbEvaIconsModule,
   NbActionsModule,
   NbCardModule,
   NbLayoutModule,
