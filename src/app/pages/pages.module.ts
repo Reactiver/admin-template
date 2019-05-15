@@ -36,9 +36,6 @@ import {
   NbCalendarKitModule,
 } from '@nebular/theme';
 
-// SERVICES
-import { NbSidebarService } from '@nebular/theme';
-
 // COMPONENTS
 import { MainComponent } from './main/main.component';
 
@@ -85,6 +82,18 @@ const MODULE = [
   declarations: [...COMPONENTS],
   imports: [CommonModule, ...MODULE],
   exports: [...COMPONENTS, ...MODULE],
-  providers: [NbSidebarService]
+  providers: [
+    ...NbThemeModule.forRoot(
+      {
+        name: 'default',
+      },
+    ).providers,
+    ...NbSidebarModule.forRoot().providers,
+    ...NbMenuModule.forRoot().providers,
+    ...NbDatepickerModule.forRoot().providers,
+    ...NbDialogModule.forRoot().providers,
+    ...NbWindowModule.forRoot().providers,
+    ...NbToastrModule.forRoot().providers,
+  ]
 })
 export class PagesModule { }
