@@ -35,7 +35,7 @@ import {
   NbTooltipModule,
   NbCalendarKitModule,
 } from '@nebular/theme';
-
+import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
 // COMPONENTS
 import { MainComponent } from './main/main.component';
 
@@ -80,7 +80,15 @@ const MODULE = [
 
 @NgModule({
   declarations: [...COMPONENTS],
-  imports: [CommonModule, ...MODULE],
+  imports: [CommonModule, ...MODULE,
+    NbAuthModule.forRoot({
+      strategies: [
+        NbPasswordAuthStrategy.setup({
+          name: 'email',
+        }),
+      ],
+      forms: {},
+    }), ],
   exports: [...COMPONENTS, ...MODULE],
   providers: [
     ...NbThemeModule.forRoot(
