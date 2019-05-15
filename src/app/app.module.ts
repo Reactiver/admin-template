@@ -4,7 +4,7 @@ import { NbThemeModule } from '@nebular/theme';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { AppRoutingModule } from './app-routing.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
     PagesModule,
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

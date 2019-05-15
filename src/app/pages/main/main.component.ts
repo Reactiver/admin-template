@@ -7,16 +7,24 @@ import { NbSidebarService } from '@nebular/theme';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
-  constructor(private sidebarService: NbSidebarService) {
-  }
+  linearMode = true;
+  fruits = [
+    'Apple',
+    'Pepper',
+    'Banana',
+    'Pineapple',
+    'Apple',
+    'Pepper',
+    'Banana',
+    'Pineapple',
+  ]
+  constructor() {}
 
   ngOnInit() {
-    console.log(this.sidebarService);
+
   }
 
-  toggle() {
-    this.sidebarService.toggle(true);
-    return false;
+  toggleLinearMode() {
+    this.linearMode = !this.linearMode;
   }
 }
